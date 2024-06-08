@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -22,20 +20,14 @@ public class Main {
         int minPaymentWeekly = paymentsWeekly2[0];
         int maxPaymentWeekly = paymentsWeekly2[0];
 
-        Arrays.sort(paymentsWeekly2);
-
-        minPaymentWeekly = paymentsWeekly2[0];
-        maxPaymentWeekly = paymentsWeekly2[paymentsWeekly2.length - 1];
-
-        //Alternative solution without sort method
-        //for (int element : paymentsWeekly2) {
-        //    if (element < minPaymentWeekly) {
-        //        minPaymentWeekly = element;
-        //    }
-        //    if (element > maxPaymentWeekly) {
-        //        maxPaymentWeekly = element;
-        //    }
-        //}
+        for (int element : paymentsWeekly2) {
+            if (element < minPaymentWeekly) {
+                minPaymentWeekly = element;
+            }
+            if (element > maxPaymentWeekly) {
+                maxPaymentWeekly = element;
+            }
+        }
 
         System.out.println("Минимальная сумма трат за неделю составила " + minPaymentWeekly + " рублей");
         System.out.println("Максимальная сумма трат за неделю составила " + maxPaymentWeekly + " рублей");
@@ -59,16 +51,9 @@ public class Main {
         System.out.println("\nTask 4");
 
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        char temp;
 
-        for (int i = 0; i < reverseFullName.length / 2; i++) {
-            temp = reverseFullName[i];
-            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
-            reverseFullName[reverseFullName.length - 1 - i] = temp;
-        }
-
-        for (char element : reverseFullName) {
-            System.out.print(element);
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
         }
 
         System.out.println();
